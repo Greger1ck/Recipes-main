@@ -46,7 +46,7 @@ class Recipe(models.Model):
     recipe_descrition = models.TextField(verbose_name="Текст рецепта", blank=False, null=False)
     author = models.ForeignKey(
         to = get_user_model(),
-        on_delete = models.SET_NULL,
+        on_delete = models.CASCADE,
         verbose_name = "Автор рецепта",
         related_name = "recipes_by_author",
         null = True,
@@ -65,9 +65,9 @@ class Recipe(models.Model):
 class Comment(models.Model):
     author = models.ForeignKey(
         to = get_user_model(),
-        on_delete = models.SET_NULL,
+        on_delete = models.CASCADE,
         verbose_name = "Автор комментария",
-        related_name = "recipes_by_author",
+        related_name = "comment_by_author",
         null = True,
         blank = True
     )

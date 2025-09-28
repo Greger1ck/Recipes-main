@@ -1,0 +1,145 @@
+    /* Баннер с параллакс эффектом */
+    .banner {
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1350&q=80') center center/cover no-repeat;
+      background-attachment: fixed; /* Параллакс эффект: фон двигается медленнее при прокрутке */
+      height: 400px;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      color: #212529;
+    }
+
+    /* Навигационное меню - прилипшее к верху при прокрутке */
+    .nav-menu {
+      background-color: #ffc107;
+      padding: 10px 0;
+      position: sticky; /* Прилипает к верху при прокрутке */
+      top: 0;
+      z-index: 1000; /* Выше других элементов */
+    }
+    .nav-menu .nav-link {
+      color: #212529 !important;
+      font-weight: 600;
+      margin: 0 15px;
+      transition: color 0.2s ease;
+    }
+    .nav-menu .nav-link:hover {
+      color: #fff !important;
+    }
+    /* Постоянный поиск в меню */
+    .nav-menu .search-in-menu {
+      flex: 1;
+      max-width: 400px;
+      margin: 0 20px;
+    }
+    .nav-menu .search-in-menu .search-overlay {
+      margin: 0;
+      max-width: none;
+      background: rgba(255 193 7 / 0.85); /* желтый с прозрачностью */
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+
+    /* Популярные рецепты */
+    .popular-recipes .card {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+    }
+    .popular-recipes .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgb(255 193 7 / 0.5);
+    }
+    .popular-recipes .card img {
+      height: 180px;
+      object-fit: cover;
+    }
+
+    /* Категории */
+    .categories .category-card {
+      position: relative;
+      color: white;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-shadow: 0 0 8px rgba(0,0,0,0.7);
+      transition: transform 0.3s ease;
+    }
+    .categories .category-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      transition: background 0.3s ease;
+    }
+    .categories .category-card:hover {
+      transform: scale(1.05);
+    }
+    .categories .category-card:hover::before {
+      background: rgba(0,0,0,0.5);
+    }
+    .categories .category-card > span {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Рецепты */
+    .recipes .recipe-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .recipes .recipe-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .recipes .recipe-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 10px 15px;
+      background: rgba(255 193 7 / 0.9);
+      color: #212529;
+      font-weight: 600;
+      font-size: 1.1rem;
+      z-index: 2;
+    }
+    .recipes .recipe-card:hover {
+      transform: scale(1.03);
+      z-index: 3;
+    }
+    .recipes .overlay-desc {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      color: white;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 1rem;
+      border-radius: 12px;
+      z-index: 4;
+    }
+    .recipes .recipe-card:hover .overlay-desc {
+      opacity: 1;
+    }

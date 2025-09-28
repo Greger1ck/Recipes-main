@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Самые популярные рецепты -->
+<section class="popular-recipes py-5 bg-light">
+  <div class="container">
+    <h2 class="mb-4 text-center text-warning fw-bold">Самые популярные рецепты</h2>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <div class="card shadow-sm">
+          <img src="https://images.unsplash.com/photo-1512058564366-c9e6d2e3f1c9?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Борщ" />
+          <div class="card-body">
+            <h5 class="card-title">Классический борщ</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm">
+          <img src="https://images.unsplash.com/photo-1525755662778-989d0524087?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Паста Карбонара" />
+          <div class="card-body">
+            <h5 class="card-title">Паста Карбонара</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm">
+          <img src="https://images.unsplash.com/photo-1505253210343-1a2e9a0ee6b1?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Шоколадный торт" />
+          <div class="card-body">
+            <h5 class="card-title">Шоколадный торт</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm">
+          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Цезарь" />
+          <div class="card-body">
+            <h5 class="card-title">Салат Цезарь</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Категории -->
+<section class="categories py-5">
+  <div class="container">
+    <h2 class="mb-4 text-center text-warning fw-bold">Категории</h2>
+    <div class="row g-4">
+      <div class="col-md-4 col-lg-2">
+        <div class="category-card" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80');">
+          <span>Завтрак</span>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-2">
+        <div class="category-card" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80&grayscale');">
+          <span>Обед</span>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-2">
+        <div class="category-card" style="background-image: url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=400&q=80');">
+          <span>Горячие блюда</span>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-2">
+        <div class="category-card" style="background-image: url('https://images.unsplash.com/photo-1505253210343-1a2e9a0ee6b1?auto=format&fit=crop&w=400&q=80');">
+          <span>Десерты</span>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-2">
+        <div class="category-card" style="background-image: url('https://images.unsplash.com/photo-1525755662778-989d0524087?auto=format&fit=crop&w=400&q=80');">
+          <span>Вегетарианские</span>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-2">
+        <div class="category-card" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80&blur=10');">
+          <span>Напитки</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Рецепты -->
+<section class="recipes py-5 bg-light">
+  <div class="container">
+    <h2 class="mb-4 text-center text-warning fw-bold">Рецепты</h2>
+    <div class="row g-4">
+      <div class="col-md-4 col-lg-3">
+        <div class="recipe-card">
+          <img src="https://images.unsplash.com/photo-1512058564366-c9e6d2e3f1c9?auto=format&fit=crop&w=400&q=80" alt="Борщ" />
+          <div class="recipe-title">Классический борщ</div>
+          <div class="overlay-desc">Традиционный украинский суп с свеклой и мясом. Время приготовления: 1 час.</div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-3">
+        <div class="recipe-card">
+          <img src="https://images.unsplash.com/photo-1525755662778-989d0524087?auto=format&fit=crop&w=400&q=80" alt="Паста Карбонара" />
+          <div class="recipe-title">Паста Карбонара</div>
+          <div class="overlay-desc">Итальянская паста с беконом и яйцом. Просто и вкусно!</div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-3">
+        <div class="recipe-card">
+          <img src="https://images.unsplash.com/photo-1505253210343-1a2e9a0ee6b1?auto=format&fit=crop&w=400&q=80" alt="Шоколадный торт" />
+          <div class="recipe-title">Шоколадный торт</div>
+          <div class="overlay-desc">Нежный десерт для любителей шоколада. Время: 45 мин + охлаждение.</div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-3">
+        <div class="recipe-card">
+          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=400&q=80" alt="Цезарь" />
+          <div class="recipe-title">Салат Цезарь</div>
+          <div class="overlay-desc">Свежий салат с курицей, сыром и хрустящими крутонами.</div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-3">
+        <div class="recipe-card">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Омлет" />
+          <div class="recipe-title">Омлет с овощами</div>
+          <div class="overlay-desc">Быстрый и полезный завтрак с помидорами и шпинатом.</div>
+        </div>
+      </div>
+      <div class="col-md-4 col-lg-3">
+        <div class="recipe-card">
+          <img src="https://images.unsplash.com/photo-1525755662778-989d0524087?auto=format&fit=crop&w=400&q=80" alt="Пицца" />
+          <div class="recipe-title">Пицца Маргарита</div>
+          <div class="overlay-desc">Классическая итальянская пицца с томатами и базиликом.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
