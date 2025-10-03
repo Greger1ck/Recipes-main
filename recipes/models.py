@@ -1,12 +1,10 @@
-from tabnanny import verbose
-from tkinter import CASCADE
 from django.contrib.auth import get_user_model
 from django.db import models
 
 class Category(models.Model):
     title = models.CharField(max_length= 50, verbose_name="Название", blank=False, null=False)
     slug = models.SlugField(unique=True, verbose_name="Слаг", blank=False, null=False)
-
+    picture = models.ImageField(verbose_name="Картинка", upload_to="category_images/", null=True, blank=True)
     class Meta:
         verbose_name = "Категория"
         verbose_name_plural = "Категории"
@@ -54,13 +52,14 @@ class Recipe(models.Model):
     )
     slug = models.SlugField(unique=True, verbose_name="Слаг", blank=False, null=False)
     short_recipe_descrition = models.TextField(verbose_name="Описание рецепта", blank=False, null=False)
+    views = models.IntegerField(verbose_name="Просмотры", default=0, )
 
     class Meta:
         verbose_name = "Рецепт"
         verbose_name_plural = "Рецепты"
 
     def __str__(self):
-        return self.name
+        return self.title
     
 class Comment(models.Model):
     author = models.ForeignKey(
@@ -84,5 +83,5 @@ class Comment(models.Model):
         verbose_name_plural = "Комментарии"
 
     def __str__(self):
-        return f"{self.author.username} - {self.recipe.name}"
+        return f"{self.author.username} - {self.recipe.title}"
 
