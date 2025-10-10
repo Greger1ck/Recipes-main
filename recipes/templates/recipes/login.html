@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="container">
+        <h2>Вход в систему</h2>
+        
+        <!-- Отображение сообщений (ошибок или успехов) -->
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <p class="{% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+        
+        <!-- Форма логина -->
+        <form method="post">
+            {% csrf_token %}
+            <label for="{{ form.username.id_for_label }}">Имя пользователя:</label>
+            {{ form.username }}
+            
+            <label for="{{ form.password.id_for_label }}">Пароль:</label>
+            {{ form.password }}
+            
+            <button type="submit" class='log_btn'>Войти</button>
+        </form>
+        
+        <!-- Ссылка на регистрацию -->
+        <div class="register-link">
+            <p>Ещё нет аккаунта? <a href="{% url 'reg' %}">Зарегистрироваться</a></p>
+        </div>
+    </div>
+{% endblock content %}

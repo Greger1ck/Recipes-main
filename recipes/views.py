@@ -1,7 +1,9 @@
-from os import name
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.views import LoginView, LogoutView
 from django.shortcuts import render
 from django.template import context
-from django.views.generic import DetailView, ListView
+from django.urls import reverse_lazy
+from django.views.generic import DetailView, ListView, CreateView
 
 from recipes.models import Category, Recipe
 
@@ -45,3 +47,15 @@ class CategoryList(DetailView):
             context["recipes"] = obj.recipes_by_cat.all()
             return context
         
+class RegisterView(CreateView):
+     form_class = UserCreationForm
+     template_name = 'recipes/register.html'
+     success_url = reverse_lazy('my_login')
+
+class CustomLoginView(LoginView):
+     template_name = 'recipes/login.html'
+     redirect_authenticated_user = False
+     success_url = reverse_lazy('home')
+
+class CustomLogoutView(LogoutView):
+     next_page = reverse_lazy('my_logout')
