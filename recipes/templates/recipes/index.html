@@ -3,7 +3,7 @@
 {% block content %}
 
 <!-- Самые популярные рецепты -->
-<section class="popular-recipes py-5 bg-light">
+{% comment %} <section class="popular-recipes py-5 bg-light">
   <div class="container">
     <h2 class="mb-4 text-center text-warning fw-bold">Самые популярные рецепты</h2>
     <div class="row g-4">
@@ -41,12 +41,12 @@
       </div>
     </div>
   </div>
-</section>
+</section> {% endcomment %}
 
 <!-- Категории -->
 {% include "recipes/include_categories.html" %}
 
 <!-- Рецепты -->
-{% include "recipes/include_recipes.html" %}
+ {% include "recipes/include_recipe_list.html" %}
 
 {% endblock content %}

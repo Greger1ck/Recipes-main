@@ -1,0 +1,18 @@
+<section class="recipes py-5 bg-light">
+  <div class="container">
+    <h2 class="mb-4 text-center text-warning fw-bold">Рецепты</h2>
+    <div class="row g-4">
+
+        {% for recipe in recipes %}
+            <a href="{% url "recipe" recipe.slug %}" class="col-md-4 col-lg-3">
+                <div class="recipe-card">
+                    <img src="{{ recipe.image.url }}" alt="{{ recipe.name }}" />
+                    <div class="recipe-title">{{ recipe.name }}</div>
+                    <div class="overlay-desc">{{ recipe.description }}</div>
+                </div>
+            </a>
+        {% endfor %}
+
+    </div>
+  </div>
+</section>

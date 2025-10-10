@@ -1,10 +1,5 @@
 venv/
 .vscode/
-DZ_files/
-
-
-__pycache__
-
-
-
 .env
+__pycache__
+DZ_files/
