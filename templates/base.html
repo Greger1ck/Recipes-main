@@ -21,7 +21,7 @@
   <div class="container">
     <ul class="nav justify-content-center align-items-center">
       <li class="nav-item">
-        <a class="nav-link active" href="#">Главная</a>
+        <a class="nav-link active" href="{% url "home" %}">Главная</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Категории</a>
@@ -41,7 +41,7 @@
 
       <!-- Постоянный поиск в меню -->
       <li class="nav-item search-in-menu">
-        <form class="search-overlay" role="search" action="" method="GET">
+        <form class="search-overlay" role="search" action="{% url "search"  %}" method="GET">
           <div class="input-group">
             <input type="text" id="search" name="search" class="form-control" placeholder="Поиск рецептов..." aria-label="Поиск рецептов" />
             <button type="submit" class="btn btn-light">Найти</button>

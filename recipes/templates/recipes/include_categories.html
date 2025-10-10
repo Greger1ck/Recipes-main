@@ -4,11 +4,11 @@
     <div class="row g-4">
 
         {% for cat in categories %}
-            <div class="col-md-4 col-lg-2">
+            <a href = "{% url "category" cat.slug %}" class="col-md-4 col-lg-2">
                 <div class="category-card" style="background-image: url('{{ cat.image.url }}');">
                 <span>{{ cat.name }}</span>
                 </div>
-            </div>
+            </a>
         {% endfor %}
 
     </div>
